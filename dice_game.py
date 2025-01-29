@@ -23,12 +23,12 @@ def dice_game():
     x = len(names)
     
     for j in range(len(names)):
-        print(f"Player {names[j]} Chance:")
+        print(f"Player{j+1}--{names[j].upper()} Chance:")
         n = input("Enter No of Times You Want to play: ")
         while not n.isdigit():
             print("Please Enter a Valid number!")
             n = input("Enter No of Times You Want to play: ")
-        print("Generating results....................")
+        print(f"Rolling Dice {n} times and Generating results....................")
         start = time.sleep(1)
         
         
@@ -38,7 +38,7 @@ def dice_game():
         for i in range(int(n)):
             random_num = random.randint(1,6)
             result.append(random_num)
-        print(f"Player {names[j]} Game outcome result is : {result}")
+        print(f"Player{j+1} {names[j].upper()} Game outcome result is : {result}")
         print()
 
 dice_game()
