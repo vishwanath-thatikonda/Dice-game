@@ -28,7 +28,7 @@ def dice_game():
         while not n.isdigit():
             print("Please Enter a Valid number!")
             n = input("Enter No of Times You Want to play: ")
-        print(f"Rolling Dice {n} times and Generating results....................")
+        print(f"Rolling Dice {n} times and Generating Results....................")
         start = time.sleep(1)
         
         
