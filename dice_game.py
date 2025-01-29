@@ -1,35 +1,52 @@
-
 import random
+import time
+
+def players():
+    players = input("Enter no of players : ")
+    print()
+    while not players.isdigit():
+        print("Please Enter a Valid number!, Atleast 1 player should play this game")
+        players = input("Enter no of players : ")
+        print()
+
+    names = []
+    y = int(players)
+    while y > 0:
+        name = input("Enter You're name: ")
+        names.append(name)
+        y -= 1
+    return names
 
 
-def play_game():
-    n = int(input("Enter how many time you need to play: "))
-    while n > 0:
-        x = []
-        lst = [1,2,3,4,5,6]
-
-
-        user_lst = []
+def dice_game():
+    names = players()
+    x = len(names)
+    
+    for j in range(len(names)):
+        print(f"Player {names[j]} Chance:")
+        n = input("Enter No of Times You Want to play: ")
+        while not n.isdigit():
+            print("Please Enter a Valid number!")
+            n = input("Enter No of Times You Want to play: ")
+        print("Generating results....................")
+        start = time.sleep(1)
         
-        for i in range(5):
-            user_choice = random.choice(lst)
-            user_lst.append(user_choice)
-            
-        print(f"You're dice outputs are: {user_lst}")
-
         
 
-        x.append(sum(user_lst))
         
+        result = []
+        for i in range(int(n)):
+            random_num = random.randint(1,6)
+            result.append(random_num)
+        print(f"Player {names[j]} Game outcome result is : {result}")
+        print()
 
-        n -= 1
+dice_game()
 
 
-    return x
 
-# play = int(input("Enter how many time you need to play: "))
-# for i in range(play + 1):
-#     x = play_game()
+
+      
 
             
 
